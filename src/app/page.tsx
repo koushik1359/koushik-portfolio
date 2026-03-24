@@ -110,7 +110,7 @@ export default function Home() {
                   initial={{ opacity: 0, x: "100%" }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: "100%" }}
-                  className="fixed inset-0 bg-black z-[200] flex flex-col p-10"
+                  className="fixed inset-0 bg-black/95 backdrop-blur-xl z-[300] flex flex-col p-10"
                 >
                   <div className="flex justify-between items-center mb-20">
                     <span className="font-bold tracking-[0.3em] text-sm uppercase font-sans">Navigation</span>
