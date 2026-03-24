@@ -112,7 +112,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-all duration-1000 z-10 pointer-events-none"></div>
          </div>
 
-         <div className="w-full h-1/2 md:h-full md:w-[55%] lg:w-[60%] bg-[#1a1a1a] flex flex-col justify-center pt-24 md:pt-32 lg:pt-40 px-8 md:px-20 lg:px-32 relative isolate z-10">
+         <div className="w-full h-1/2 md:h-full md:w-[55%] lg:w-[60%] bg-[#1a1a1a] flex flex-col justify-center px-8 md:px-20 lg:px-32 relative isolate z-10">
              <div className="max-w-2xl w-fit relative z-10">
                  <motion.h1 
                     initial={{ y: 30, opacity: 0 }}
@@ -133,12 +133,12 @@ export default function Home() {
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.4, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-gray-400 leading-relaxed text-sm md:text-base max-w-md mb-12 font-light pointer-events-none"
+                    className="text-gray-400 leading-relaxed text-sm md:text-base max-w-md mb-8 font-light pointer-events-none"
                  >
                     AI Engineer specializing in LLM-powered applications, predictive analytics platforms, and production-oriented machine learning systems across Azure and Databricks cloud environments.
                  </motion.p>
                  
-                 <div className="flex flex-wrap items-center gap-4 md:gap-6 mt-14 relative z-30 w-full justify-center md:justify-start">
+                 <div className="flex flex-wrap items-center gap-4 md:gap-6 mt-10 relative z-30 w-full justify-center md:justify-start">
                     <motion.div 
                         initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
