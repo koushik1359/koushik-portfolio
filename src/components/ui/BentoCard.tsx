@@ -45,7 +45,7 @@ export const BentoCard = ({
       glarePosition="all"
       scale={1.02}
       transitionSpeed={2000}
-      className={`h-full w-full glass-panel rounded-3xl overflow-hidden flex flex-col p-6 md:p-8 ${className}`}
+      className={`h-full w-full min-h-[400px] md:min-h-0 glass-panel rounded-3xl overflow-hidden flex flex-col p-6 md:p-8 ${className}`}
     >
       {/* Background Ambient Gradient */}
       <div className={`absolute inset-0 bg-gradient-to-tr ${gradientClass} to-transparent z-0 opacity-40 group-hover:opacity-100 transition-opacity duration-700`} />
@@ -70,11 +70,11 @@ export const BentoCard = ({
           {description}
         </p>
 
-        <div className="flex gap-2 flex-wrap mt-4 mb-4">
+        <div className="flex gap-2 flex-wrap mt-2 mb-6">
           {technologies.map((t) => (
             <span
               key={t}
-              className="text-xs bg-black/40 text-gray-300 px-3 py-1 rounded-full border border-white/5"
+              className="text-[10px] md:text-xs bg-black/40 text-gray-300 px-3 py-1 rounded-full border border-white/5"
             >
               {t}
             </span>

@@ -55,7 +55,7 @@ export const ChatbotWidget = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed bottom-24 right-4 md:right-10 w-[350px] md:w-[400px] h-[500px] bg-[#111] border border-white/10 rounded-2xl shadow-2xl z-[999] flex flex-col overflow-hidden pointer-events-auto"
+            className="fixed bottom-24 right-4 md:right-10 w-[calc(100%-32px)] md:w-[400px] h-[500px] bg-[#111] border border-white/10 rounded-2xl shadow-2xl z-[999] flex flex-col overflow-hidden pointer-events-auto"
           >
             {/* Header */}
             <div className="bg-[#1a1a1a] p-4 flex justify-between items-center border-b border-white/10">
@@ -142,10 +142,10 @@ export const ChatbotWidget = () => {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 1, type: "spring" }}
             onClick={() => setIsOpen(true)}
-            className="w-14 h-14 bg-indigo-600 hover:bg-indigo-500 rounded-full flex items-center justify-center shadow-2xl shadow-indigo-500/50 text-white transition-all transform hover:scale-110 pointer-events-auto group relative"
+            className="w-12 h-12 md:w-14 md:h-14 bg-indigo-600 hover:bg-indigo-500 rounded-full flex items-center justify-center shadow-2xl shadow-indigo-500/50 text-white transition-all transform hover:scale-110 pointer-events-auto group relative"
           >
             <div className="absolute inset-0 rounded-full bg-indigo-400 animate-ping opacity-20 group-hover:opacity-40" />
-            <MessageSquare className="w-6 h-6 relative z-10" />
+            <MessageSquare className="w-5 h-5 md:w-6 md:h-6 relative z-10" />
           </motion.button>
         </div>
       )}
