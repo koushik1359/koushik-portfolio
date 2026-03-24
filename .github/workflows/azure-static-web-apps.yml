@@ -39,7 +39,7 @@ jobs:
           ###### Repository/Build Configurations ######
           app_location: "/" # Next.js Frontend
           api_location: "backend" # FastAPI Backend (adapted for Functions)
-          output_location: ".next" # Next.js build output
+          output_location: "out" # Next.js static export directory
           ###### End of Repository/Build Configurations ######
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
