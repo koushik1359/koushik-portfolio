@@ -38,7 +38,7 @@ jobs:
           action: "upload"
           ###### Repository/Build Configurations ######
           app_location: "/" # Next.js Frontend
-          api_location: "backend" # FastAPI Backend (adapted for Functions)
+          api_location: "api" # FastAPI Backend (standard naming for SWA)
           output_location: "out" # Next.js static export directory
           ###### End of Repository/Build Configurations ######
         env:
