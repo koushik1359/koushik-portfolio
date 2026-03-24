@@ -8,3 +8,7 @@ app = func.FunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
 @app.asgi_app(app=fastapi_app)
 def main(req: func.HttpRequest, context: func.Context) -> func.HttpResponse:
     return app.handle(req, context)
+
+@app.route(route="ping", methods=["GET"])
+def ping(req: func.HttpRequest) -> func.HttpResponse:
+    return func.HttpResponse("pong", status_code=200)
