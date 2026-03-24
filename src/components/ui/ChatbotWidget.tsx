@@ -64,8 +64,11 @@ export const ChatbotWidget = () => {
                 <span className="text-white font-medium text-sm">Resume AI Agent</span>
               </div>
               <button
-                onClick={() => setIsOpen(false)}
-                className="text-gray-400 hover:text-white transition-colors"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsOpen(false);
+                }}
+                className="p-2 -mr-2 text-gray-400 hover:text-white hover:bg-white/10 rounded-full transition-all relative z-10"
               >
                 <X className="w-5 h-5" />
               </button>
