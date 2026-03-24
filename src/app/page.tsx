@@ -29,6 +29,7 @@ const PROJECTS_DATA = [
     description: "Scalable RAG ecosystem for enterprise document uploads.",
     longDescription: "Scalable enterprise conversational AI platform using a decoupled FastAPI + React architecture. Engineered a multi-stage retrieval pipeline combining Pinecone vector search with HuggingFace cross-encoder re-ranking, substantially improving context precision. Enabled real-time conversational responsiveness through Server-Sent Events (SSE) token streaming.",
     technologies: ["FastAPI", "OpenAI", "Pinecone", "Vite", "Azure"],
+    badge: undefined,
     href: "https://icy-beach-03d802d10.6.azurestaticapps.net",
     icon: <Activity className="w-6 h-6 text-blue-400" />,
     className: "col-span-1 md:col-span-2 row-span-1 border border-white/5",
@@ -40,6 +41,7 @@ const PROJECTS_DATA = [
     description: "Clinical Computer Vision for retinal pathology detection.",
     longDescription: "Production-grade medical imaging diagnostic platform using PyTorch and Vision Transformers (ViT-B/16), achieving 99.5% classification accuracy across multiple tissue classes. Integrated Grad-CAM explainability into the inference pipeline to generate real-time diagnostic heatmap overlays, improving transparency and clinical trust.",
     technologies: ["PyTorch", "Azure Container Apps", "React", "Grad-CAM"],
+    badge: undefined,
     href: "https://lungnet-app--0000002.delightfulmushroom-9dec91d8.eastus.azurecontainerapps.io/",
     icon: <LayoutTemplate className="w-6 h-6 text-emerald-400" />,
     className: "col-span-1 md:col-span-1 row-span-1 border border-white/5",
@@ -51,6 +53,7 @@ const PROJECTS_DATA = [
     description: "ML engine estimating Lifetime Value and churn probability.",
     longDescription: "Predictive analytics engine combining XGBoost classifications with Bayesian BG/NBD & Gamma-Gamma models to estimate Customer Lifetime Value. Engineered an end-to-end customer intelligence pipeline across 540K+ transaction records, training an XGBoost churn classifier that achieved 0.72 ROC-AUC and 76% recall.",
     technologies: ["Scikit-learn", "Lifetimes", "Streamlit", "XGBoost"],
+    badge: undefined,
     href: "https://clvchurnengine-1359.streamlit.app/",
     icon: <Sparkles className="w-6 h-6 text-amber-400" />,
     className: "col-span-1 md:col-span-1 row-span-1 border border-white/5",
@@ -135,16 +138,16 @@ export default function Home() {
                     AI Engineer specializing in LLM-powered applications, predictive analytics platforms, and production-oriented machine learning systems across Azure and Databricks cloud environments.
                  </motion.p>
                  
-                 <div className="flex flex-wrap items-center gap-8 mt-14 relative z-30 w-fit">
+                 <div className="flex flex-wrap items-center gap-4 md:gap-6 mt-14 relative z-30 w-full justify-center md:justify-start">
                     <motion.div 
                         initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ delay: 0.6, duration: 1 }}
-                        className="inline-block"
+                        className="w-full md:w-auto"
                     >
                         <a 
                            href="#projects" 
-                           className="inline-block bg-white text-black px-12 py-5 text-sm font-bold tracking-[0.2em] uppercase hover:bg-gray-200 transition-all transform hover:scale-105 shadow-[0_0_30px_rgba(255,255,255,0.1)]"
+                           className="block w-full md:w-auto text-center bg-white text-black px-8 py-4 text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase hover:bg-gray-200 transition-all shadow-[0_0_30px_rgba(255,255,255,0.1)]"
                         >
                            Explore Projects
                         </a>
@@ -154,12 +157,12 @@ export default function Home() {
                         initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ delay: 0.7, duration: 1 }}
-                        className="inline-block"
+                        className="w-full md:w-auto"
                     >
                         <a 
                            href="/resume.pdf" 
                            download 
-                           className="inline-block border-2 border-white/30 text-white px-10 py-5 text-sm font-bold tracking-[0.2em] uppercase hover:bg-white/10 transition-all transform hover:scale-105"
+                           className="block w-full md:w-auto text-center border-2 border-white/30 text-white px-8 py-4 text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase hover:bg-white/10 transition-all"
                         >
                            Resume
                         </a>
@@ -169,15 +172,15 @@ export default function Home() {
                         initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ delay: 0.8, duration: 1 }}
-                        className="inline-block"
+                        className="w-full md:w-auto"
                     >
                         <a 
                            href="https://github.com/koushik1359" 
                            target="_blank" 
                            rel="noopener noreferrer"
-                           className="inline-flex items-center gap-4 border-2 border-white/30 text-white px-8 py-5 text-sm font-bold tracking-[0.2em] uppercase hover:bg-white/10 transition-all transform hover:scale-105 group"
+                           className="inline-flex items-center justify-center w-full md:w-auto gap-3 border-2 border-white/30 text-white px-8 py-4 text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase hover:bg-white/10 transition-all group"
                         >
-                           <Code2 className="w-5 h-5 text-white/70 group-hover:text-white transition-colors" />
+                           <Code2 className="w-4 h-4 text-white/70 group-hover:text-white transition-colors" />
                            <span>GitHub</span>
                         </a>
                     </motion.div>
