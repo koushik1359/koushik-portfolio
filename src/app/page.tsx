@@ -5,10 +5,10 @@ import { useState } from "react";
 import { Sparkles, Database, LayoutTemplate, Activity, Globe, Code2, ChevronRight, Mail } from "lucide-react";
 import Image from "next/image";
 
-import { BentoCard } from "@/components/ui/BentoCard";
-import { TechMarquee } from "@/components/ui/TechMarquee";
-import { ChatbotWidget } from "@/components/ui/ChatbotWidget";
-import { ProjectModal } from "@/components/ui/ProjectModal";
+import { BentoCard } from "../components/ui/BentoCard";
+import { TechMarquee } from "../components/ui/TechMarquee";
+import { ChatbotWidget } from "../components/ui/ChatbotWidget";
+import { ProjectModal } from "../components/ui/ProjectModal";
 
 const PROJECTS_DATA = [
   {
