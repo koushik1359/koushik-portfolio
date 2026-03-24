@@ -103,32 +103,40 @@ export default function Home() {
             >
                <Menu className="w-8 h-8" />
             </button>
-
-            <AnimatePresence>
-              {isMenuOpen && (
-                <motion.div
-                  initial={{ opacity: 0, x: "100%" }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: "100%" }}
-                  className="fixed inset-0 bg-black/95 backdrop-blur-xl z-[300] flex flex-col p-10"
-                >
-                  <div className="flex justify-between items-center mb-20">
-                    <span className="font-bold tracking-[0.3em] text-sm uppercase font-sans">Navigation</span>
-                    <button onClick={() => setIsMenuOpen(false)}>
-                      <CloseIcon className="w-8 h-8 text-white" />
-                    </button>
-                  </div>
-                  <div className="flex flex-col gap-8 text-5xl font-bold tracking-tighter">
-                    {["Home", "Projects", "Skills", "About", "Contact"].map((item) => (
-                      <a key={item} href={`#${item.toLowerCase()}`} onClick={() => setIsMenuOpen(false)} className="text-white hover:text-indigo-400">
-                        {item}
-                      </a>
-                    ))}
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
          </nav>
+
+         <AnimatePresence>
+            {isMenuOpen && (
+              <motion.div
+                initial={{ opacity: 0, x: "100%" }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: "100%" }}
+                className="fixed inset-0 bg-[#161616] z-[500] flex flex-col p-10 overflow-hidden"
+              >
+                <div className="flex justify-between items-center mb-20 pointer-events-auto">
+                  <span className="font-bold tracking-[0.3em] text-sm uppercase font-sans text-gray-500">Navigation</span>
+                  <button onClick={() => setIsMenuOpen(false)} className="text-white hover:text-indigo-400 p-2">
+                    <CloseIcon className="w-10 h-10" />
+                  </button>
+                </div>
+                <div className="flex flex-col gap-6 text-5xl md:text-7xl font-bold tracking-tighter">
+                  {["Home", "Projects", "Skills", "About", "Contact"].map((item, idx) => (
+                    <motion.a 
+                      key={item} 
+                      href={`#${item.toLowerCase()}`} 
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.1 * idx }}
+                      onClick={() => setIsMenuOpen(false)} 
+                      className="text-white hover:text-indigo-500 transition-colors w-full"
+                    >
+                      {item}
+                    </motion.a>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+         </AnimatePresence>
 
          <div className="w-full h-1/2 md:h-full md:w-[45%] lg:w-[40%] relative overflow-hidden group bg-black z-0">
              <Image 
