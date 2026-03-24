@@ -175,11 +175,9 @@ export default function Home() {
                            href="https://github.com/koushik1359" 
                            target="_blank" 
                            rel="noopener noreferrer"
-                           className="inline-flex items-center gap-5 text-white text-sm font-bold tracking-[0.2em] uppercase hover:text-gray-300 transition-all group p-1 transform hover:scale-105"
+                           className="inline-flex items-center gap-4 border-2 border-white/30 text-white px-8 py-5 text-sm font-bold tracking-[0.2em] uppercase hover:bg-white/10 transition-all transform hover:scale-105 group"
                         >
-                           <div className="w-14 h-14 rounded-full border-2 border-white/20 flex items-center justify-center bg-transparent group-hover:border-white transition-colors">
-                              <Code2 className="w-6 h-6 text-white group-hover:text-white transition-colors" />
-                           </div>
+                           <Code2 className="w-5 h-5 text-white/70 group-hover:text-white transition-colors" />
                            <span>GitHub</span>
                         </a>
                     </motion.div>

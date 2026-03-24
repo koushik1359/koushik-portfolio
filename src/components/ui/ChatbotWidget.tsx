@@ -51,11 +51,11 @@ export const ChatbotWidget = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            transition={{ type: "spring", stiffness: 300, damping: 25 }}
-            className="fixed bottom-24 right-4 md:right-10 w-[350px] md:w-[400px] h-[500px] bg-[#111] border border-white/10 rounded-2xl shadow-2xl z-50 flex flex-col overflow-hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed bottom-24 right-4 md:right-10 w-[350px] md:w-[400px] h-[500px] bg-[#111] border border-white/10 rounded-2xl shadow-2xl z-[999] flex flex-col overflow-hidden pointer-events-auto"
           >
             {/* Header */}
             <div className="bg-[#1a1a1a] p-4 flex justify-between items-center border-b border-white/10">
