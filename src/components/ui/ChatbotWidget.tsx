@@ -126,15 +126,15 @@ export const ChatbotWidget = () => {
 
       {/* Floating Action Button */}
       {!isOpen && (
-        <div className="fixed bottom-6 right-6 md:bottom-10 md:right-10 flex flex-col items-end gap-3 z-50 pointer-events-none">
+        <div className="fixed bottom-6 left-6 md:left-auto md:right-10 md:bottom-10 flex flex-col items-start md:items-end gap-3 z-50 pointer-events-none">
           <motion.div
             initial={{ scale: 0, opacity: 0, y: 10 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             transition={{ delay: 2, type: "spring" }}
-            className="!hidden md:!block bg-indigo-600 text-white px-4 py-2 rounded-2xl rounded-br-none text-xs font-bold tracking-wide shadow-xl border border-white/20 relative"
+            className="!hidden md:!block bg-indigo-600 text-white px-4 py-2 rounded-2xl rounded-bl-none md:rounded-bl-none md:rounded-br-none text-xs font-bold tracking-wide shadow-xl border border-white/20 relative"
           >
             Chat with my Resume
-            <div className="absolute -bottom-1 right-2 w-3 h-3 bg-indigo-600 rotate-45 border-r border-b border-white/20" />
+            <div className="absolute -bottom-1 left-4 md:left-auto md:right-2 w-3 h-3 bg-indigo-600 rotate-45 border-r border-b border-white/20" />
           </motion.div>
           
           <motion.button

@@ -138,7 +138,7 @@ export default function Home() {
                 className="object-cover object-[center_top] group-hover:scale-105 transition-all duration-1000 ease-out" 
                 priority
               />
-              <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-all duration-1000 z-10 pointer-events-none"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent md:bg-black/10 transition-all duration-1000 z-10 pointer-events-none"></div>
          </div>
 
          <div className="w-full h-1/2 md:h-full md:w-[55%] lg:w-[60%] bg-[#1a1a1a] flex flex-col justify-center px-8 md:px-20 lg:px-32 relative isolate z-10">
@@ -147,7 +147,7 @@ export default function Home() {
                     initial={{ y: 30, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.2, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-4xl md:text-8xl lg:text-[100px] font-bold text-white tracking-tighter leading-[0.85] mb-10 w-fit pointer-events-none"
+                    className="text-3xl md:text-8xl lg:text-[100px] font-bold text-white tracking-tighter leading-[0.85] mb-10 w-fit pointer-events-none"
                  >
                      <div className="flex items-center gap-6 md:gap-10 w-full mb-8">
                          <span className="text-gray-500 text-xs font-bold tracking-[0.3em] uppercase">AI Engineer</span>
