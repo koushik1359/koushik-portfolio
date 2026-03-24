@@ -87,7 +87,7 @@ export default function Home() {
   return (
     <main className="min-h-screen selection:bg-white/90 selection:text-black bg-[#161616]">
       <section id="home" className="relative w-full h-screen flex flex-col md:flex-row overflow-clip">
-          <nav className="absolute top-0 w-full flex justify-between items-center p-10 md:p-14 z-[110] mix-blend-difference text-white">
+          <nav className="absolute top-0 w-full flex justify-between items-center px-10 py-8 md:px-14 md:py-10 z-[110] mix-blend-difference text-white">
             <span className="font-bold tracking-[0.3em] text-sm uppercase">Koushik</span>
             <div className="hidden md:flex flex-1 justify-end gap-16 lg:gap-24 text-sm font-semibold tracking-widest uppercase text-white/80 pr-12">
                <a href="#home" className="hover:text-white transition-all transform hover:scale-105">Home</a>
@@ -149,7 +149,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent md:bg-black/10 transition-all duration-1000 z-10 pointer-events-none"></div>
          </div>
 
-         <div className="w-full h-1/2 md:h-full md:w-[55%] lg:w-[60%] bg-[#1a1a1a] flex flex-col justify-center px-8 md:px-20 lg:px-32 relative isolate z-10">
+         <div className="w-full h-1/2 md:h-full md:w-[55%] lg:w-[60%] bg-[#1a1a1a] flex flex-col justify-center md:justify-start px-8 pt-20 md:pt-40 md:px-20 lg:px-32 relative isolate z-10">
              <div className="max-w-2xl w-fit relative z-10">
                  <motion.h1 
                     initial={{ y: 30, opacity: 0 }}
