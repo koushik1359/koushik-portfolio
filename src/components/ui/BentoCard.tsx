@@ -66,7 +66,7 @@ export const BentoCard = ({
         <h3 className="text-xl md:text-2xl font-semibold mb-2 text-white">
           {title}
         </h3>
-        <p className="text-gray-400 text-sm leading-relaxed mb-4 flex-1">
+        <p className="text-gray-400 text-sm leading-relaxed mb-10 flex-1">
           {description}
         </p>
 
@@ -74,7 +74,7 @@ export const BentoCard = ({
           {technologies.map((t) => (
             <span
               key={t}
-              className="text-[10px] md:text-xs bg-black/40 text-gray-300 px-3 py-1 rounded-full border border-white/5"
+              className="text-[9px] md:text-xs bg-black/40 text-gray-300 px-3 py-1 rounded-full border border-white/5"
             >
               {t}
             </span>
@@ -83,7 +83,7 @@ export const BentoCard = ({
       </div>
 
       {/* Hover Action Link */}
-      <div className="relative bottom-0 right-0 w-full mt-auto flex items-center justify-between text-white transition-colors duration-300 text-sm font-medium opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity">
+      <div className="relative bottom-0 right-0 w-full mt-auto pt-4 flex items-center justify-between text-white transition-colors duration-300 text-sm font-medium opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity">
         <div className="flex items-center text-white/50 group-hover:text-white/80 transition-colors">
            View Details <ChevronRight className="w-4 h-4 ml-1" />
         </div>

@@ -96,6 +96,7 @@ export default function Home() {
                <a href="#about" className="hover:text-white transition-all transform hover:scale-105">About Me</a>
                <a href="#contact" className="hover:text-white transition-all transform hover:scale-105">Contact</a>
             </div>
+            
             <button 
                onClick={() => setIsMenuOpen(true)}
                className="md:hidden p-2 -mr-2 text-white hover:opacity-70 transition-opacity relative z-[120]"
@@ -146,7 +147,7 @@ export default function Home() {
                     initial={{ y: 30, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.2, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-5xl md:text-8xl lg:text-[100px] font-bold text-white tracking-tighter leading-[0.85] mb-10 w-fit pointer-events-none"
+                    className="text-4xl md:text-8xl lg:text-[100px] font-bold text-white tracking-tighter leading-[0.85] mb-10 w-fit pointer-events-none"
                  >
                      <div className="flex items-center gap-6 md:gap-10 w-full mb-8">
                          <span className="text-gray-500 text-xs font-bold tracking-[0.3em] uppercase">AI Engineer</span>
@@ -190,7 +191,7 @@ export default function Home() {
                         <a 
                            href="/resume.pdf" 
                            download 
-                           className="block w-full md:w-auto text-center border-2 border-white/30 text-white px-8 py-4 text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase hover:bg-white/10 transition-all"
+                           className="block w-full md:w-auto text-center border-2 border-white/30 text-white px-8 py-4 text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase hover:bg-white/10 transition-all font-sans"
                         >
                            Resume
                         </a>
@@ -244,7 +245,7 @@ export default function Home() {
          >
             <motion.div
                 variants={itemVariants}
-                className="col-span-1 md:col-span-2 row-span-1 glass-panel rounded-3xl p-8 flex flex-col justify-center relative overflow-hidden group border border-white/5 pointer-events-none min-h-[220px]"
+                className="col-span-1 md:col-span-2 row-span-1 glass-panel rounded-3xl p-8 flex flex-col justify-center relative overflow-hidden group border border-white/5 pointer-events-none min-h-[200px]"
             >
                 <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                 <div className="flex items-center gap-3 mb-6 relative z-10">
@@ -257,7 +258,7 @@ export default function Home() {
 
             <motion.div
                 variants={itemVariants}
-                className="col-span-1 md:col-span-2 row-span-1 glass-panel rounded-3xl flex flex-col items-center justify-center p-8 transition-all duration-500 text-gray-400 hover:text-white border border-white/5 group relative h-full w-full min-h-[220px]"
+                className="col-span-1 md:col-span-2 row-span-1 glass-panel rounded-3xl flex flex-col items-center justify-center p-8 transition-all duration-500 text-gray-400 hover:text-white border border-white/5 group relative h-full w-full min-h-[200px]"
             >
                 <a 
                    href="https://github.com/koushik1359" 

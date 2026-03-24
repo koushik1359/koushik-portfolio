@@ -131,7 +131,7 @@ export const ChatbotWidget = () => {
             initial={{ scale: 0, opacity: 0, y: 10 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             transition={{ delay: 2, type: "spring" }}
-            className="bg-indigo-600 text-white px-4 py-2 rounded-2xl rounded-br-none text-xs font-bold tracking-wide shadow-xl border border-white/20 relative"
+            className="hidden md:block bg-indigo-600 text-white px-4 py-2 rounded-2xl rounded-br-none text-xs font-bold tracking-wide shadow-xl border border-white/20 relative"
           >
             Chat with my Resume
             <div className="absolute -bottom-1 right-2 w-3 h-3 bg-indigo-600 rotate-45 border-r border-b border-white/20" />
