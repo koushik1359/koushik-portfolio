@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { Sparkles, Database, LayoutTemplate, Activity, Globe, Code2, ChevronRight, Mail, X as CloseIcon } from "lucide-react";
+import { Sparkles, Database, LayoutTemplate, Activity, Globe, Code2, ChevronRight, Mail, X as CloseIcon, Menu } from "lucide-react";
 import Image from "next/image";
 
 import { BentoCard } from "../components/ui/BentoCard";
@@ -96,13 +96,12 @@ export default function Home() {
                <a href="#about" className="hover:text-white transition-all transform hover:scale-105">About Me</a>
                <a href="#contact" className="hover:text-white transition-all transform hover:scale-105">Contact</a>
             </div>
-            <div 
+            <button 
                onClick={() => setIsMenuOpen(true)}
-               className="md:hidden space-y-2 cursor-pointer hover:opacity-70 transition-opacity p-2 -mr-2"
+               className="md:hidden p-2 -mr-2 text-white hover:opacity-70 transition-opacity relative z-[120]"
             >
-               <div className="w-6 h-0.5 bg-white"></div>
-               <div className="w-6 h-0.5 bg-white"></div>
-            </div>
+               <Menu className="w-8 h-8" />
+            </button>
 
             <AnimatePresence>
               {isMenuOpen && (
