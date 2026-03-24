@@ -66,7 +66,7 @@ export const BentoCard = ({
         <h3 className="text-xl md:text-2xl font-semibold mb-2 text-white">
           {title}
         </h3>
-        <p className="text-gray-400 text-sm leading-relaxed mb-10 flex-1">
+        <p className="text-gray-400 text-sm leading-relaxed mb-14 flex-1">
           {description}
         </p>
 
