@@ -83,7 +83,7 @@ export default function Home() {
   return (
     <main className="min-h-screen selection:bg-white/90 selection:text-black bg-[#161616]">
       <section id="home" className="relative w-full h-screen flex flex-col md:flex-row overflow-clip">
-         <nav className="absolute top-0 w-full flex justify-between items-center p-10 md:p-14 z-[100] mix-blend-difference text-white">
+          <nav className="absolute top-0 w-full flex justify-between items-center p-10 md:p-14 z-[110] mix-blend-difference text-white">
             <span className="font-bold tracking-[0.3em] text-sm uppercase">Koushik</span>
             <div className="hidden md:flex flex-1 justify-end gap-16 lg:gap-24 text-sm font-semibold tracking-widest uppercase text-white/80 pr-12">
                <a href="#home" className="hover:text-white transition-all transform hover:scale-105">Home</a>
@@ -115,9 +115,9 @@ export default function Home() {
                     initial={{ y: 30, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.2, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-7xl md:text-8xl lg:text-[130px] font-bold text-white tracking-tighter leading-[0.80] mb-10 w-fit pointer-events-none"
+                    className="text-7xl md:text-8xl lg:text-[110px] font-bold text-white tracking-tighter leading-[0.85] mb-10 w-fit pointer-events-none"
                  >
-                     <div className="flex items-center gap-6 md:gap-10 w-full mb-4">
+                     <div className="flex items-center gap-6 md:gap-10 w-full mb-8">
                          <span className="text-gray-500 text-xs font-bold tracking-[0.3em] uppercase">AI Engineer</span>
                          <div className="h-[1px] flex-1 bg-white/10 hidden md:block w-full"></div>
                      </div>
