@@ -12,9 +12,7 @@ import { ChatbotWidget } from "../components/ui/ChatbotWidget";
 import { ProjectModal } from "../components/ui/ProjectModal";
 import Magnetic from "../components/ui/Magnetic";
 
-const KnowledgeGraph = dynamic(() => import("../components/ui/KnowledgeGraph"), {
-  ssr: false,
-});
+// 3D Background removed for minimalist look
 
 const PROJECTS_DATA = [
   {
@@ -156,7 +154,8 @@ export default function Home() {
          </div>
 
          <div className="w-full flex-1 md:h-full md:w-[55%] lg:w-[60%] bg-[#1a1a1a] flex flex-col justify-start pt-12 pb-20 px-8 md:pt-40 md:px-20 lg:px-32 relative isolate z-10 overflow-hidden">
-             <KnowledgeGraph />
+             {/* Minimalist Professional Background */}
+             <div className="absolute inset-0 bg-[#161616] z-0 opacity-50"></div>
              <div className="max-w-2xl w-fit relative z-20">
                   <motion.h1 
                      initial={{ y: 30, opacity: 0 }}
