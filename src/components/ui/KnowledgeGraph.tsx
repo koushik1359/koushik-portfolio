@@ -47,25 +47,24 @@ function Graph() {
           <group position={node.pos as [number, number, number]}>
             {/* The Node Dot */}
             <mesh>
-              <sphereGeometry args={[0.08, 16, 16]} />
+              <sphereGeometry args={[0.1, 16, 16]} />
               <meshStandardMaterial 
                 color={node.color} 
                 emissive={node.color} 
-                emissiveIntensity={2} 
+                emissiveIntensity={3} 
                 toneMapped={false} 
               />
             </mesh>
             
             {/* The Label */}
             <Text
-              position={[0, 0.25, 0]}
-              fontSize={0.2}
+              position={[0, 0.35, 0]}
+              fontSize={0.25}
               color="white"
-              font="/fonts/GeistMono-Bold.woff" // Assuming font path or fallback
               anchorX="center"
               anchorY="middle"
               outlineColor="#000"
-              outlineWidth={0.02}
+              outlineWidth={0.03}
             >
               {node.name}
             </Text>
@@ -82,37 +81,22 @@ function Graph() {
             KNOWLEDGE_NODES[end].pos as [number, number, number]
           ]}
           color="#ffffff"
-          opacity={0.15}
+          opacity={0.3}
           transparent
           lineWidth={1}
         />
       ))}
-
-      {/* Ambient background particles for depth */}
-      <Points limit={500}>
-        <PointMaterial 
-            transparent 
-            vertexColors={false} 
-            size={0.02} 
-            sizeAttenuation={true} 
-            depthWrite={false} 
-            color="#444"
-        />
-        {/* Placeholder for random particles if needed, but keeping it clean for now */}
-      </Points>
     </group>
   );
 }
 
 export default function KnowledgeGraph() {
   return (
-    <div className="absolute inset-0 w-full h-full z-0 opacity-60 pointer-events-none overflow-hidden">
-      <Canvas camera={{ position: [0, 0, 7], fov: 45 }} dpr={[1, 2]}>
-        <ambientLight intensity={0.5} />
-        <pointLight position={[10, 10, 10]} intensity={1} />
-        
+    <div className="absolute inset-0 w-full h-full z-10 opacity-100 pointer-events-none overflow-hidden bg-black/20">
+      <Canvas camera={{ position: [0, 0, 8], fov: 45 }} dpr={[1, 2]}>
+        <ambientLight intensity={0.8} />
+        <pointLight position={[10, 10, 10]} intensity={1.5} />
         <Graph />
-        
         <Environment preset="night" />
       </Canvas>
     </div>

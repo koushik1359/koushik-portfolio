@@ -157,7 +157,7 @@ export default function Home() {
 
          <div className="w-full flex-1 md:h-full md:w-[55%] lg:w-[60%] bg-[#1a1a1a] flex flex-col justify-start pt-12 pb-20 px-8 md:pt-40 md:px-20 lg:px-32 relative isolate z-10 overflow-hidden">
              <KnowledgeGraph />
-             <div className="max-w-2xl w-fit relative z-10">
+             <div className="max-w-2xl w-fit relative z-20">
                   <motion.h1 
                      initial={{ y: 30, opacity: 0 }}
                      animate={{ y: 0, opacity: 1 }}
