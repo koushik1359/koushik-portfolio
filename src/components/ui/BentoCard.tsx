@@ -45,7 +45,7 @@ export const BentoCard = ({
       glarePosition="all"
       scale={1.02}
       transitionSpeed={2000}
-      className={`h-full w-full min-h-[400px] md:min-h-0 glass-panel rounded-3xl overflow-hidden flex flex-col p-6 md:p-8 ${className}`}
+      className={`h-full w-full min-h-[400px] md:min-h-[300px] glass-panel rounded-3xl overflow-hidden flex flex-col p-6 md:p-7 ${className}`}
     >
       {/* Background Ambient Gradient */}
       <div className={`absolute inset-0 bg-gradient-to-tr ${gradientClass} to-transparent z-0 opacity-40 group-hover:opacity-100 transition-opacity duration-700`} />
@@ -66,7 +66,7 @@ export const BentoCard = ({
         <h3 className="text-xl md:text-2xl font-semibold mb-2 text-white">
           {title}
         </h3>
-        <p className="text-gray-400 text-sm leading-relaxed mb-14 flex-1">
+        <p className="text-gray-400 text-sm leading-relaxed mb-6 flex-1">
           {description}
         </p>
 
@@ -83,7 +83,7 @@ export const BentoCard = ({
       </div>
 
       {/* Hover Action Link */}
-      <div className="relative bottom-0 right-0 w-full mt-auto pt-4 flex items-center justify-between text-white transition-colors duration-300 text-sm font-medium opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity">
+      <div className="relative bottom-0 right-0 w-full mt-auto pt-4 flex items-center justify-between text-white transition-all duration-300 text-sm font-medium opacity-100 md:opacity-0 group-hover:opacity-100 md:translate-y-2 group-hover:translate-y-0">
         <div className="flex items-center text-white/50 group-hover:text-white/80 transition-colors">
            View Details <ChevronRight className="w-4 h-4 ml-1" />
         </div>

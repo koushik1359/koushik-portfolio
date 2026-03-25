@@ -245,7 +245,7 @@ export default function Home() {
            initial="hidden"
            whileInView="visible"
            viewport={{ once: true, margin: "-100px" }}
-           className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6 auto-rows-min md:auto-rows-[220px]"
+           className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6 auto-rows-min md:auto-rows-[300px]"
          >
             <motion.div
                 variants={itemVariants}
