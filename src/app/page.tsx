@@ -231,13 +231,15 @@ export default function Home() {
             initial={{ opacity: 0 }} 
             whileInView={{ opacity: 1 }} 
             viewport={{ once: true }}
-            className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 text-gray-500 text-sm tracking-widest uppercase pb-6 border-b border-white/10 gap-4"
+            className="w-full flex flex-col items-center justify-center text-center mb-16 pb-12 border-b border-white/5 gap-8"
          >
-            <span className="text-white/80 font-semibold tracking-widest uppercase">Machine Learning Workspaces</span>
-            <span className="flex items-center gap-3 bg-white/5 px-4 py-2 rounded-full">
-               <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_10px_rgba(16,185,129,0.5)]"></span>
-               <span className="text-xs uppercase tracking-wider font-semibold">Live on Azure</span>
-            </span>
+            <div className="flex flex-col items-center gap-4">
+              <span className="text-white font-bold tracking-[0.3em] uppercase text-2xl md:text-3xl block">Machine Learning Workspaces</span>
+              <div className="flex items-center gap-3 bg-white/5 px-6 py-2 rounded-full border border-white/10 shadow-2xl">
+                 <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_15px_rgba(16,185,129,0.8)]"></span>
+                 <span className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-gray-400">Live on Azure</span>
+              </div>
+            </div>
          </motion.div>
 
          <motion.div
