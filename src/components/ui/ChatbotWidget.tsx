@@ -126,7 +126,7 @@ export const ChatbotWidget = () => {
 
       {/* Floating Action Button */}
       {!isOpen && (
-        <div className="fixed bottom-4 left-4 md:left-auto md:right-10 md:bottom-10 flex flex-col items-start md:items-end gap-3 z-50 pointer-events-none">
+        <div className="fixed bottom-10 left-6 md:left-auto md:right-10 md:bottom-10 flex flex-col items-start md:items-end gap-3 z-50 pointer-events-none">
           <motion.div
             initial={{ scale: 0, opacity: 0, y: 10 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}

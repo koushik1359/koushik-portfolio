@@ -138,14 +138,14 @@ export default function Home() {
             )}
          </AnimatePresence>
 
-         <div className="w-full h-[45vh] shrink-0 md:h-full md:w-[45%] lg:w-[40%] bg-[#161616] relative overflow-hidden group bg-black z-0">
+         <div className="w-full h-[55vh] shrink-0 md:h-full md:w-[45%] lg:w-[40%] bg-[#161616] relative overflow-hidden group bg-black z-0">
              <Image 
                 src="/profile.jpg" 
                 alt="Koushik Profile" 
-                fill 
-                className="object-cover object-[center_top] group-hover:scale-105 transition-all duration-1000 ease-out" 
+                fill
                 priority
-              />
+                className="object-cover object-top md:object-center grayscale hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-105"
+             />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent md:bg-black/10 transition-all duration-1000 z-10 pointer-events-none"></div>
          </div>
 
@@ -226,7 +226,7 @@ export default function Home() {
          </div>
       </section>
 
-      <section id="projects" className="py-24 px-4 md:px-8 lg:px-12 max-w-7xl mx-auto">
+      <section id="projects" className="py-20 pb-32 md:py-32 bg-[#161616] relative">
          <motion.div 
             initial={{ opacity: 0 }} 
             whileInView={{ opacity: 1 }} 
