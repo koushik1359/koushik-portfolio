@@ -87,7 +87,7 @@ export const BentoCard = ({
       </motion.div>
 
       {/* Hover Action Link - Managed via absolute positioning and motion */}
-      <div className="absolute bottom-7 left-7 right-7 flex items-center justify-between text-white text-sm font-medium z-20 pointer-events-none group-hover:pointer-events-auto">
+      <div className="absolute bottom-7 left-7 right-7 flex items-center justify-between text-white text-sm font-medium z-20 pointer-events-auto md:pointer-events-none md:group-hover:pointer-events-auto transition-opacity">
         <motion.div 
           initial={{ opacity: 0, y: 10 }}
           whileHover={{ opacity: 1, color: "#fff" }}
