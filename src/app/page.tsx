@@ -86,7 +86,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen selection:bg-white/90 selection:text-black bg-[#161616]">
-      <section id="home" className="relative w-full h-screen flex flex-col md:flex-row overflow-clip">
+      <section id="home" className="relative w-full h-screen flex flex-col md:flex-row overflow-visible md:overflow-clip">
           <nav className="absolute top-0 w-full flex justify-between items-center px-10 py-8 md:px-14 md:py-10 z-[110] mix-blend-difference text-white">
             <span className="font-bold tracking-[0.3em] text-sm uppercase">Koushik</span>
             <div className="hidden md:flex flex-1 justify-end gap-16 lg:gap-24 text-sm font-semibold tracking-widest uppercase text-white/80 pr-12">
@@ -175,7 +175,7 @@ export default function Home() {
                     AI Engineer specializing in LLM-powered applications, predictive analytics platforms, and production-oriented machine learning systems across Azure and Databricks cloud environments.
                  </motion.p>
                  
-                 <div className="flex flex-col md:flex-row md:items-center gap-y-6 md:gap-x-6 mt-10 relative z-30 w-full md:w-fit justify-center md:justify-start">
+                 <div className="flex flex-col md:flex-row md:items-center gap-y-4 md:gap-x-6 mt-10 relative z-30 w-full md:w-fit justify-center md:justify-start">
                     <motion.div 
                         initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
@@ -184,7 +184,7 @@ export default function Home() {
                     >
                         <a 
                            href="#projects" 
-                           className="flex items-center justify-center w-full md:w-auto bg-white text-black px-8 py-5 text-[10px] md:text-sm font-bold tracking-[0.2em] uppercase hover:bg-gray-200 transition-all shadow-[0_0_30px_rgba(255,255,255,0.1)] antialiased"
+                           className="flex items-center justify-center w-full md:w-auto bg-white text-black px-8 py-4 text-[10px] md:text-sm font-bold tracking-[0.2em] uppercase hover:bg-gray-200 transition-all shadow-[0_0_30px_rgba(255,255,255,0.1)] antialiased"
                         >
                            Explore Projects
                         </a>
@@ -199,7 +199,7 @@ export default function Home() {
                         <a 
                            href="/resume.pdf" 
                            download 
-                           className="flex items-center justify-center w-full md:w-auto border-2 border-white/20 bg-white/10 text-white px-8 py-5 text-[10px] md:text-sm font-bold tracking-[0.2em] uppercase hover:bg-white/20 transition-all font-sans antialiased"
+                           className="flex items-center justify-center w-full md:w-auto border-2 border-white/20 bg-white/10 text-white px-8 py-4 text-[10px] md:text-sm font-bold tracking-[0.2em] uppercase hover:bg-white/20 transition-all font-sans antialiased"
                         >
                            Resume
                         </a>
@@ -215,7 +215,7 @@ export default function Home() {
                            href="https://github.com/koushik1359" 
                            target="_blank" 
                            rel="noopener noreferrer"
-                           className="flex items-center justify-center w-full md:w-auto gap-4 border-2 border-white/20 bg-white/10 text-white px-8 py-5 text-[10px] md:text-sm font-bold tracking-[0.2em] uppercase hover:bg-white/20 transition-all group antialiased"
+                           className="flex items-center justify-center w-full md:w-auto gap-4 border-2 border-white/20 bg-white/10 text-white px-8 py-4 text-[10px] md:text-sm font-bold tracking-[0.2em] uppercase hover:bg-white/20 transition-all group antialiased"
                         >
                            <Code2 className="w-4 h-4 text-white group-hover:scale-110 transition-transform" />
                            <span>GitHub</span>
