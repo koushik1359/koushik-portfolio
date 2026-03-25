@@ -175,7 +175,7 @@ export default function Home() {
                     AI Engineer specializing in LLM-powered applications, predictive analytics platforms, and production-oriented machine learning systems across Azure and Databricks cloud environments.
                  </motion.p>
                  
-                 <div className="flex flex-wrap items-center gap-4 md:gap-6 mt-10 relative z-30 w-full justify-center md:justify-start">
+                 <div className="flex flex-wrap items-center gap-x-4 gap-y-6 mt-10 relative z-30 w-full justify-center md:justify-start">
                     <motion.div 
                         initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
@@ -199,7 +199,7 @@ export default function Home() {
                         <a 
                            href="/resume.pdf" 
                            download 
-                           className="block w-full md:w-auto text-center border-2 border-white/30 text-white px-8 py-4 text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase hover:bg-white/10 transition-all font-sans"
+                           className="block w-full md:w-auto text-center border-2 border-white/20 bg-white/5 text-white px-8 py-4 text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase hover:bg-white/10 transition-all font-sans"
                         >
                            Resume
                         </a>
@@ -215,7 +215,7 @@ export default function Home() {
                            href="https://github.com/koushik1359" 
                            target="_blank" 
                            rel="noopener noreferrer"
-                           className="inline-flex items-center justify-center w-full md:w-auto gap-3 border-2 border-white/30 text-white px-8 py-4 text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase hover:bg-white/10 transition-all group"
+                           className="inline-flex items-center justify-center w-full md:w-auto gap-3 border-2 border-white/20 bg-white/5 text-white px-8 py-4 text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase hover:bg-white/10 transition-all group"
                         >
                            <Code2 className="w-4 h-4 text-white/70 group-hover:text-white transition-colors" />
                            <span>GitHub</span>
