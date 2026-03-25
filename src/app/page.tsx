@@ -184,7 +184,7 @@ export default function Home() {
                     >
                         <a 
                            href="#projects" 
-                           className="block w-full md:w-auto text-center bg-white text-black px-8 py-5 text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase hover:bg-gray-200 transition-all shadow-[0_0_30px_rgba(255,255,255,0.1)]"
+                           className="flex items-center justify-center w-full md:w-auto bg-white text-black px-8 py-5 text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase hover:bg-gray-200 transition-all shadow-[0_0_30px_rgba(255,255,255,0.1)]"
                         >
                            Explore Projects
                         </a>
@@ -199,7 +199,7 @@ export default function Home() {
                         <a 
                            href="/resume.pdf" 
                            download 
-                           className="block w-full md:w-auto text-center border-2 border-white/20 bg-white/10 text-white px-8 py-5 text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase hover:bg-white/20 transition-all font-sans antialiased"
+                           className="flex items-center justify-center w-full md:w-auto border-2 border-white/20 bg-white/10 text-white px-8 py-5 text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase hover:bg-white/20 transition-all font-sans antialiased"
                         >
                            Resume
                         </a>
@@ -215,7 +215,7 @@ export default function Home() {
                            href="https://github.com/koushik1359" 
                            target="_blank" 
                            rel="noopener noreferrer"
-                           className="inline-flex items-center justify-center w-full md:w-auto gap-3 border-2 border-white/20 bg-white/10 text-white px-8 py-5 text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase hover:bg-white/20 transition-all group antialiased"
+                           className="flex items-center justify-center w-full md:w-auto gap-3 border-2 border-white/20 bg-white/10 text-white px-8 py-5 text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase hover:bg-white/20 transition-all group antialiased"
                         >
                            <Code2 className="w-4 h-4 text-white group-hover:scale-110 transition-transform" />
                            <span>GitHub</span>
