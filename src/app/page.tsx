@@ -149,22 +149,18 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent md:bg-black/10 transition-all duration-1000 z-10 pointer-events-none"></div>
          </div>
 
-         <div className="w-full h-1/2 md:h-full md:w-[55%] lg:w-[60%] bg-[#1a1a1a] flex flex-col justify-center md:justify-start px-8 pt-20 md:pt-40 md:px-20 lg:px-32 relative isolate z-10">
+         <div className="w-full min-h-[50vh] md:h-full md:w-[55%] lg:w-[60%] bg-[#1a1a1a] flex flex-col justify-start pt-32 pb-20 md:justify-start px-8 md:pt-40 md:px-20 lg:px-32 relative isolate z-10">
              <div className="max-w-2xl w-fit relative z-10">
-                 <motion.h1 
-                    initial={{ y: 30, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.2, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-3xl md:text-8xl lg:text-[100px] font-bold text-white tracking-tighter leading-[0.85] mb-10 w-fit pointer-events-none"
-                 >
-                     <div className="flex items-center gap-6 md:gap-10 w-full mb-8">
-                         <span className="text-gray-500 text-xs font-bold tracking-[0.3em] uppercase">AI Engineer</span>
-                         <div className="h-[1px] flex-1 bg-white/10 hidden md:block w-full"></div>
-                     </div>
-                     <span className="block text-white">Koushik</span>
-                     <span className="block text-white/90">Manjunathan</span>
-                     <span className="block text-white/80">Sreevatsa</span>
-                 </motion.h1>
+                  <motion.h1 
+                     initial={{ y: 30, opacity: 0 }}
+                     animate={{ y: 0, opacity: 1 }}
+                     transition={{ delay: 0.3, duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                     className="text-white text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.9] mb-6 pointer-events-none"
+                  >
+                     Koushik<br />
+                     Manjunathan<br />
+                     Sreevatsa
+                  </motion.h1>
                  
                  <motion.p 
                     initial={{ y: 20, opacity: 0 }}
@@ -175,49 +171,49 @@ export default function Home() {
                     AI Engineer specializing in LLM-powered applications, predictive analytics platforms, and production-oriented machine learning systems across Azure and Databricks cloud environments.
                  </motion.p>
                  
-                 <div className="flex flex-col md:flex-row md:items-center gap-y-4 md:gap-x-6 mt-10 relative z-30 w-full md:w-fit justify-center md:justify-start">
+                 <div className="flex flex-col md:flex-row md:items-center gap-y-5 md:gap-x-6 mt-12 relative z-30 w-full md:w-fit justify-start">
                     <motion.div 
-                        initial={{ y: 20, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ delay: 0.5, duration: 0.8 }}
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.5, duration: 0.6 }}
                         className="w-full md:w-auto"
                     >
                         <a 
                            href="#projects" 
-                           className="flex items-center justify-center w-full md:w-auto bg-white text-black px-8 py-4 text-[10px] md:text-sm font-bold tracking-[0.2em] uppercase hover:bg-gray-200 transition-all shadow-[0_0_30px_rgba(255,255,255,0.1)] antialiased"
+                           className="flex items-center justify-center w-full md:w-auto bg-white text-black px-8 py-5 text-[11px] md:text-sm font-bold tracking-[0.2em] uppercase hover:bg-gray-200 transition-all antialiased shadow-lg"
                         >
                            Explore Projects
                         </a>
                     </motion.div>
                     
                     <motion.div 
-                        initial={{ y: 20, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ delay: 0.6, duration: 0.8 }}
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.6, duration: 0.6 }}
                         className="w-full md:w-auto"
                     >
                         <a 
                            href="/resume.pdf" 
                            download 
-                           className="flex items-center justify-center w-full md:w-auto border-2 border-white/20 bg-white/10 text-white px-8 py-4 text-[10px] md:text-sm font-bold tracking-[0.2em] uppercase hover:bg-white/20 transition-all font-sans antialiased"
+                           className="flex items-center justify-center w-full md:w-auto border-2 border-white/20 bg-white/10 text-white px-8 py-5 text-[11px] md:text-sm font-bold tracking-[0.2em] uppercase hover:bg-white/20 transition-all font-sans antialiased"
                         >
                            Resume
                         </a>
                     </motion.div>
 
                     <motion.div 
-                        initial={{ y: 20, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{ delay: 0.7, duration: 0.8 }}
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.7, duration: 0.6 }}
                         className="w-full md:w-auto"
                     >
                         <a 
                            href="https://github.com/koushik1359" 
                            target="_blank" 
                            rel="noopener noreferrer"
-                           className="flex items-center justify-center w-full md:w-auto gap-4 border-2 border-white/20 bg-white/10 text-white px-8 py-4 text-[10px] md:text-sm font-bold tracking-[0.2em] uppercase hover:bg-white/20 transition-all group antialiased"
+                           className="flex items-center justify-center w-full md:w-auto gap-3 border-2 border-white/20 bg-white/10 text-white px-8 py-5 text-[11px] md:text-sm font-bold tracking-[0.2em] uppercase hover:bg-white/20 transition-all group antialiased"
                         >
-                           <Code2 className="w-4 h-4 text-white group-hover:scale-110 transition-transform" />
+                           <Code2 className="w-4 h-4 text-white" />
                            <span>GitHub</span>
                         </a>
                     </motion.div>
