@@ -1,28 +1,63 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageSquare, X, Send, Bot, User } from "lucide-react";
+import { MessageSquare, X, Send, Bot, User, ChevronRight, ExternalLink } from "lucide-react";
+
+// Mini Typewriter Component for internal use
+const TypewriterMessage = ({ text, speed = 30, onComplete, onWordRevealed }: { text: string; speed?: number; onComplete?: () => void; onWordRevealed?: () => void }) => {
+  const [displayedText, setDisplayedText] = useState("");
+  const words = text.split(" ");
+  const index = useRef(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (index.current < words.length) {
+        setDisplayedText((prev) => (prev ? prev + " " + words[index.current] : words[index.current]));
+        index.current++;
+        onWordRevealed?.();
+      } else {
+        clearInterval(timer);
+        onComplete?.();
+      }
+    }, speed);
+    return () => clearInterval(timer);
+  }, [text, speed, onComplete, onWordRevealed, words]);
+
+  return <>{displayedText}</>;
+};
 
 export const ChatbotWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
   const [chatHistory, setChatHistory] = useState([
     {
       role: "assistant",
       content: "Hi! I am Koushik's AI assistant. Ask me anything about his resume, experience, or ML projects!",
+      isNew: false
     },
   ]);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [chatHistory, isLoading, isOpen]);
 
   const handleSend = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!message.trim()) return;
 
-    setChatHistory([...chatHistory, { role: "user", content: message }]);
+    const userMsg = message;
+    setChatHistory((prev) => [...prev, { role: "user", content: userMsg, isNew: false }]);
     setMessage("");
+    setIsLoading(true);
 
     try {
-      // Use relative /api for production (Azure SWA) and localhost for dev
       const apiUrl = typeof window !== 'undefined' && window.location.hostname === 'localhost' 
         ? 'http://localhost:8000' 
         : '/api';
@@ -30,18 +65,20 @@ export const ChatbotWidget = () => {
       const response = await fetch(`${apiUrl}/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message }),
+        body: JSON.stringify({ message: userMsg }),
       });
       const data = await response.json();
       
+      setIsLoading(false);
       setChatHistory((prev) => [
         ...prev,
-        { role: "assistant", content: data.reply },
+        { role: "assistant", content: data.reply, isNew: true },
       ]);
     } catch (error) {
+      setIsLoading(false);
       setChatHistory((prev) => [
         ...prev,
-        { role: "assistant", content: "Error connecting to Koushik's AI Backend. Is it running?" },
+        { role: "assistant", content: "Error connecting to Koushik's AI Backend. Is it running?", isNew: true },
       ]);
     }
   };
@@ -51,10 +88,9 @@ export const ChatbotWidget = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
+            initial={{ opacity: 0, y: 20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 20, scale: 0.95 }}
             className="fixed bottom-24 right-4 md:right-10 w-[calc(100%-32px)] md:w-[400px] h-[500px] bg-[#111] border border-white/10 rounded-2xl shadow-2xl z-[999] flex flex-col overflow-hidden pointer-events-auto"
           >
             {/* Header */}
@@ -97,10 +133,49 @@ export const ChatbotWidget = () => {
                         : "bg-white/5 text-gray-300 rounded-tl-none border border-white/5"
                     }`}
                   >
-                    {chat.content}
+                    {chat.role === "assistant" && chat.isNew ? (
+                      <TypewriterMessage 
+                        text={chat.content} 
+                        onWordRevealed={scrollToBottom}
+                        onComplete={() => {
+                          setChatHistory(prev => 
+                            prev.map((m, i) => i === idx ? { ...m, isNew: false } : m)
+                          );
+                        }}
+                      />
+                    ) : (
+                      chat.content
+                    )}
                   </div>
                 </div>
               ))}
+              
+              {/* Thinking Indicator */}
+              {isLoading && (
+                <div className="flex gap-3">
+                  <div className="w-8 h-8 rounded-full bg-emerald-600/20 text-emerald-400 flex items-center justify-center shrink-0">
+                    <Bot className="w-4 h-4" />
+                  </div>
+                  <div className="bg-white/5 text-gray-400 p-3 rounded-2xl rounded-tl-none border border-white/5 flex gap-1 items-center">
+                    <motion.div 
+                      animate={{ scale: [1, 1.2, 1] }} 
+                      transition={{ repeat: Infinity, duration: 0.6, delay: 0 }}
+                      className="w-1.5 h-1.5 bg-gray-500 rounded-full" 
+                    />
+                    <motion.div 
+                      animate={{ scale: [1, 1.2, 1] }} 
+                      transition={{ repeat: Infinity, duration: 0.6, delay: 0.2 }}
+                      className="w-1.5 h-1.5 bg-gray-500 rounded-full" 
+                    />
+                    <motion.div 
+                      animate={{ scale: [1, 1.2, 1] }} 
+                      transition={{ repeat: Infinity, duration: 0.6, delay: 0.4 }}
+                      className="w-1.5 h-1.5 bg-gray-500 rounded-full" 
+                    />
+                  </div>
+                </div>
+              )}
+              <div ref={messagesEndRef} />
             </div>
 
             {/* Input Form */}
@@ -114,7 +189,7 @@ export const ChatbotWidget = () => {
               />
               <button
                 type="submit"
-                disabled={!message.trim()}
+                disabled={!message.trim() || isLoading}
                 className="absolute right-6 top-1/2 -translate-y-1/2 text-indigo-400 hover:text-indigo-300 disabled:text-gray-600 transition-colors"
               >
                 <Send className="w-5 h-5" />
