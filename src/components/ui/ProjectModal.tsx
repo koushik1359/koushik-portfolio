@@ -130,9 +130,9 @@ export const ProjectModal = ({ isOpen, onClose, project }: ProjectModalProps) =>
                            href={project.href}
                            target="_blank"
                            rel="noopener noreferrer"
-                           className="w-full bg-white text-black py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-gray-200 transition-all text-sm uppercase tracking-widest shadow-lg shadow-white/10"
+                           className="w-full bg-white text-black py-4 px-4 rounded-xl font-bold flex items-center justify-center gap-2 text-center hover:bg-gray-200 transition-all text-xs md:text-sm uppercase tracking-[0.15em] md:tracking-widest shadow-lg shadow-white/10 whitespace-nowrap"
                         >
-                           Launch Workspace <ExternalLink className="w-4 h-4" />
+                           Launch Workspace <ExternalLink className="w-4 h-4 shrink-0" />
                         </a>
                      </div>
                   </div>
