@@ -50,13 +50,10 @@ export const BentoCard = ({
       {/* Background Ambient Gradient */}
       <div className={`absolute inset-0 bg-gradient-to-tr ${gradientClass} to-transparent z-0 opacity-40 group-hover:opacity-100 transition-opacity duration-700`} />
       
-      {/* Content */}
+      {/* Content Container */}
       <div className="relative z-10 flex-1 flex flex-col h-full text-left">
-        <motion.div 
-          className="flex-1 flex flex-col h-full"
-          whileHover={typeof window !== 'undefined' && window.matchMedia('(hover: hover)').matches ? { y: -45 } : {}}
-          transition={{ duration: 0.4, ease: "easeOut" }}
-        >
+        {/* DESKTOP HOVER CONTENT SHIFT - Reverting to CSS for stability */}
+        <div className="flex-1 flex flex-col h-full transition-transform duration-500 md:group-hover:-translate-y-12">
           <div className="flex justify-between items-start mb-4">
             <div className="p-3 bg-white/5 rounded-xl text-white/80">
               {icon}
@@ -71,11 +68,11 @@ export const BentoCard = ({
           <h3 className="text-xl md:text-2xl font-semibold mb-2 text-white">
             {title}
           </h3>
-          <p className="text-gray-400 text-sm leading-relaxed mb-6 flex-1">
+          <p className="text-gray-400 text-sm leading-relaxed mb-6">
             {description}
           </p>
 
-          <div className="flex gap-2 flex-wrap mt-2 mb-6">
+          <div className="flex gap-2 flex-wrap mt-auto mb-6">
             {technologies.map((t) => (
               <span
                 key={t}
@@ -86,10 +83,10 @@ export const BentoCard = ({
             ))}
           </div>
 
-          {/* MOBILE ONLY BUTTONS - Standard flow, always visible */}
-          <div className="flex md:hidden items-center justify-between mt-4 pb-2 border-t border-white/5 pt-4">
-            <div className="flex items-center text-white/70 text-sm font-medium">
-               View Details <ChevronRight className="w-4 h-4 ml-1" />
+          {/* MOBILE ONLY BUTTONS - Inline, always visible, prevents clipping */}
+          <div className="flex md:hidden items-center justify-between mt-auto pb-4 border-t border-white/5 pt-4">
+            <div className="flex items-center text-white/70 text-xs font-medium">
+               Details <ChevronRight className="w-4 h-4 ml-0.5" />
             </div>
             {href && (
               <a 
@@ -97,17 +94,17 @@ export const BentoCard = ({
                 target="_blank" 
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
-                className="flex items-center gap-2 bg-white/10 text-white px-4 py-2 rounded-full border border-white/10 text-[10px] font-bold tracking-widest uppercase shadow-lg"
+                className="flex items-center gap-1.5 bg-white/10 text-white px-4 py-2 rounded-full border border-white/10 text-[9px] font-bold tracking-widest uppercase shadow-lg whitespace-nowrap"
               >
                 Visit Site
                 <ExternalLink className="w-3.5 h-3.5 text-white/50" />
               </a>
             )}
           </div>
-        </motion.div>
+        </div>
       </div>
 
-      {/* DESKTOP ONLY HOVER ACTIONS - Absolute positioned, Slide & Reveal */}
+      {/* DESKTOP ONLY HOVER ACTIONS - Absolute positioned, Reveal only */}
       <div className="hidden md:flex absolute bottom-7 left-7 right-7 items-center justify-between text-white text-sm font-medium z-20 pointer-events-none group-hover:pointer-events-auto">
         <div className="flex items-center text-white/50 group-hover:text-white/80 transition-all opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 duration-500">
            View Details <ChevronRight className="w-4 h-4 ml-1" />
