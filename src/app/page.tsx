@@ -251,10 +251,10 @@ export default function Home() {
          >
             <motion.div
                 variants={itemVariants}
-                className="col-span-1 md:col-span-2 row-span-1 glass-panel rounded-3xl p-8 flex flex-col justify-center relative overflow-hidden group border border-white/5 pointer-events-none min-h-[200px]"
+                className="col-span-1 md:col-span-2 row-span-1 glass-panel rounded-3xl p-8 flex flex-col justify-center items-center text-center relative overflow-hidden group border border-white/5 pointer-events-none min-h-[200px]"
             >
                 <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                <div className="flex items-center gap-3 mb-6 relative z-10">
+                <div className="flex items-center justify-center gap-3 mb-6 relative z-10">
                     <span className="h-3 w-3 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_15px_rgba(16,185,129,0.8)]"></span>
                     <span className="text-emerald-400 text-xs font-bold tracking-widest uppercase">Available Now</span>
                 </div>
