@@ -144,7 +144,7 @@ export default function Home() {
                 alt="Koushik Profile" 
                 fill
                 priority
-                className="object-cover object-top md:object-center grayscale hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-105"
+                className="object-cover object-top md:object-center transition-all duration-700 scale-105 group-hover:scale-100"
              />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent md:bg-black/10 transition-all duration-1000 z-10 pointer-events-none"></div>
          </div>
