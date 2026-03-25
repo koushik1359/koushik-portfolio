@@ -89,14 +89,13 @@ export const BentoCard = ({
       {/* Hover Action Link - Managed via absolute positioning and motion */}
       <div className="absolute bottom-7 left-7 right-7 flex items-center justify-between text-white text-sm font-medium z-20 pointer-events-none group-hover:pointer-events-auto">
         <motion.div 
-          className="flex items-center text-white/50"
           initial={{ opacity: 0, y: 10 }}
           whileHover={{ opacity: 1, color: "#fff" }}
           animate={{ 
-            opacity: typeof window !== 'undefined' && window.matchMedia('(hover: hover)').matches ? 0 : 1,
+            opacity: 1,
             y: 0 
           }}
-          className="group-hover:opacity-100 transition-opacity duration-300"
+          className="flex items-center text-white/50 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300"
         >
            View Details <ChevronRight className="w-4 h-4 ml-1" />
         </motion.div>
@@ -107,7 +106,7 @@ export const BentoCard = ({
             rel="noopener noreferrer"
             initial={{ opacity: 0, y: 10 }}
             whileHover={{ scale: 1.05 }}
-            className="flex items-center gap-2 bg-white/10 text-white px-5 py-2.5 rounded-full border border-white/10 transition-all text-xs font-bold tracking-widest uppercase group-hover:opacity-100 opacity-0 translate-y-2 group-hover:translate-y-0 duration-300 shadow-[0_4px_12px_rgba(0,0,0,0.5)]"
+            className="flex items-center gap-2 bg-white/10 text-white px-5 py-2.5 rounded-full border border-white/10 transition-all text-xs font-bold tracking-widest uppercase opacity-100 md:opacity-0 md:group-hover:opacity-100 translate-y-0 md:translate-y-2 md:group-hover:translate-y-0 duration-300 shadow-[0_4px_12px_rgba(0,0,0,0.5)]"
             onClick={(e) => e.stopPropagation()}
           >
             Visit Site
