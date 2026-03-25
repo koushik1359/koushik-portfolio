@@ -10,6 +10,7 @@ import { BentoCard } from "../components/ui/BentoCard";
 import { TechMarquee } from "../components/ui/TechMarquee";
 import { ChatbotWidget } from "../components/ui/ChatbotWidget";
 import { ProjectModal } from "../components/ui/ProjectModal";
+import Magnetic from "../components/ui/Magnetic";
 
 const LiquidMetalBackground = dynamic(() => import("../components/ui/LiquidMetalBackground"), {
   ssr: false,
@@ -95,11 +96,11 @@ export default function Home() {
           <nav className="absolute top-0 w-full flex justify-between items-center px-10 py-8 md:px-14 md:py-10 z-[110] mix-blend-difference text-white">
             <span className="font-bold tracking-[0.3em] text-sm uppercase">Koushik</span>
             <div className="hidden md:flex flex-1 justify-end gap-16 lg:gap-24 text-sm font-semibold tracking-widest uppercase text-white/80 pr-12">
-               <a href="#home" className="hover:text-white transition-all transform hover:scale-105">Home</a>
-               <a href="#projects" className="hover:text-white transition-all transform hover:scale-105">Projects</a>
-               <a href="#skills" className="hover:text-white transition-all transform hover:scale-105">Skills</a>
-               <a href="#about" className="hover:text-white transition-all transform hover:scale-105">About Me</a>
-               <a href="#contact" className="hover:text-white transition-all transform hover:scale-105">Contact</a>
+               <Magnetic><a href="#home" className="hover:text-white transition-all transform hover:scale-110 interactive-target">Home</a></Magnetic>
+               <Magnetic><a href="#projects" className="hover:text-white transition-all transform hover:scale-110 interactive-target">Projects</a></Magnetic>
+               <Magnetic><a href="#skills" className="hover:text-white transition-all transform hover:scale-110 interactive-target">Skills</a></Magnetic>
+               <Magnetic><a href="#about" className="hover:text-white transition-all transform hover:scale-110 interactive-target">About Me</a></Magnetic>
+               <Magnetic><a href="#contact" className="hover:text-white transition-all transform hover:scale-110 interactive-target">Contact</a></Magnetic>
             </div>
             
             <button 
@@ -184,12 +185,14 @@ export default function Home() {
                         transition={{ delay: 0.5, duration: 0.6 }}
                         className="w-full md:w-auto"
                     >
-                        <a 
-                           href="#projects" 
-                           className="flex items-center justify-center w-full md:w-auto bg-white text-black px-8 py-5 text-[11px] md:text-sm font-bold tracking-[0.2em] uppercase hover:bg-gray-200 transition-all antialiased shadow-lg"
-                        >
-                           Explore Projects
-                        </a>
+                        <Magnetic>
+                          <a 
+                             href="#projects" 
+                             className="flex items-center justify-center w-full md:w-auto bg-white text-black px-8 py-5 text-[11px] md:text-sm font-bold tracking-[0.2em] uppercase hover:bg-gray-200 transition-all antialiased shadow-lg interactive-target"
+                          >
+                             Explore Projects
+                          </a>
+                        </Magnetic>
                     </motion.div>
                     
                     <motion.div 

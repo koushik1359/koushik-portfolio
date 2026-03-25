@@ -1,8 +1,13 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useScroll, useVelocity, useTransform, motion } from "framer-motion";
 
 export const TechMarquee = () => {
+  const { scrollY } = useScroll();
+  const scrollVelocity = useVelocity(scrollY);
+  // Slant the marquee based on scroll speed for a sense of momentum (max 10 degrees skew)
+  const skewX = useTransform(scrollVelocity, [-2000, 2000], [-8, 8], { clamp: false });
+
   const techs = [
     { name: "Python", color: "hover:text-amber-300" },
     { name: "React", color: "hover:text-blue-500" },
@@ -18,9 +23,10 @@ export const TechMarquee = () => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.8 }}
-      className="mt-8 overflow-hidden relative glass-panel rounded-3xl py-6 flex items-center"
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      style={{ skewX }}
+      className="mt-8 overflow-hidden relative glass-panel rounded-3xl py-6 flex items-center shadow-2xl transition-all duration-300"
     >
       <div className="absolute left-0 w-24 h-full bg-gradient-to-r from-[#0a0a0a] to-transparent z-10" />
       <div className="absolute right-0 w-24 h-full bg-gradient-to-l from-[#0a0a0a] to-transparent z-10" />
@@ -30,12 +36,12 @@ export const TechMarquee = () => {
         {[...Array(2)].map((_, i) => (
           <div
             key={i}
-            className="flex gap-8 md:gap-16 items-center text-gray-500 font-mono text-sm tracking-wider uppercase font-semibold"
+            className="flex gap-8 md:gap-16 items-center text-gray-500 font-mono text-sm tracking-widest uppercase font-semibold"
           >
             {techs.map((tech) => (
               <span
                 key={tech.name}
-                className={`${tech.color} transition-colors duration-300 cursor-default`}
+                className={`${tech.color} transition-colors duration-300 cursor-default select-none`}
               >
                 {tech.name}
               </span>

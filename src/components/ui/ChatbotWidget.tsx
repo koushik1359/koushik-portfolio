@@ -104,7 +104,7 @@ export const ChatbotWidget = () => {
                   e.stopPropagation();
                   setIsOpen(false);
                 }}
-                className="p-2 -mr-2 text-gray-400 hover:text-white hover:bg-white/10 rounded-full transition-all relative z-10"
+                className="p-2 -mr-2 text-gray-400 hover:text-white hover:bg-white/10 rounded-full transition-all relative z-10 interactive-target"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -217,7 +217,7 @@ export const ChatbotWidget = () => {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 1, type: "spring" }}
             onClick={() => setIsOpen(true)}
-            className="w-12 h-12 md:w-14 md:h-14 bg-indigo-600 hover:bg-indigo-500 rounded-full flex items-center justify-center shadow-2xl shadow-indigo-500/50 text-white transition-all transform hover:scale-110 pointer-events-auto group relative"
+            className="w-12 h-12 md:w-14 md:h-14 bg-indigo-600 hover:bg-indigo-500 rounded-full flex items-center justify-center shadow-2xl shadow-indigo-500/50 text-white transition-all transform hover:scale-110 pointer-events-auto group relative interactive-target"
           >
             <div className="absolute inset-0 rounded-full bg-indigo-400 animate-ping opacity-20 group-hover:opacity-40" />
             <MessageSquare className="w-5 h-5 md:w-6 md:h-6 relative z-10" />

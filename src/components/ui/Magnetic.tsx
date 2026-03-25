@@ -1,0 +1,44 @@
+"use client";
+
+import { useRef, useState, ReactNode } from "react";
+import { motion } from "framer-motion";
+
+export default function Magnetic({ children }: { children: ReactNode }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!ref.current) return;
+    
+    const { clientX, clientY } = e;
+    const { height, width, left, top } = ref.current.getBoundingClientRect();
+    
+    // Calculate distance from center
+    const middleX = clientX - (left + width / 2);
+    const middleY = clientY - (top + height / 2);
+    
+    // Pull intensity (0.35 = 35% of cursor offset)
+    setPosition({ x: middleX * 0.35, y: middleY * 0.35 });
+  };
+
+  const reset = () => {
+    setPosition({ x: 0, y: 0 });
+  };
+
+  const { x, y } = position;
+  
+  return (
+    <motion.div
+      style={{ position: "relative" }}
+      ref={ref}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={reset}
+      animate={{ x, y }}
+      transition={{ type: "spring", stiffness: 200, damping: 20, mass: 0.5 }}
+      // Ensure the cursor morphing works for magnetic targets
+      className="interactive-target"
+    >
+      {children}
+    </motion.div>
+  );
+}
