@@ -45,7 +45,7 @@ export const BentoCard = ({
       glarePosition="all"
       scale={1.02}
       transitionSpeed={2000}
-      className={`h-full w-full min-h-[400px] md:min-h-[300px] glass-panel rounded-3xl flex flex-col p-6 md:p-7 ${className}`}
+      className={`relative h-full w-full min-h-[400px] md:min-h-[300px] glass-panel rounded-3xl flex flex-col p-6 md:p-7 ${className}`}
     >
       {/* Background Ambient Gradient */}
       <div className={`absolute inset-0 bg-gradient-to-tr ${gradientClass} to-transparent z-0 opacity-40 group-hover:opacity-100 transition-opacity duration-700`} />
