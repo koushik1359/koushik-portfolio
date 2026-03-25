@@ -4,11 +4,16 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Sparkles, Database, LayoutTemplate, Activity, Globe, Code2, ChevronRight, Mail, X as CloseIcon, Menu } from "lucide-react";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 
 import { BentoCard } from "../components/ui/BentoCard";
 import { TechMarquee } from "../components/ui/TechMarquee";
 import { ChatbotWidget } from "../components/ui/ChatbotWidget";
 import { ProjectModal } from "../components/ui/ProjectModal";
+
+const NeuralNetworkBackground = dynamic(() => import("../components/ui/NeuralNetworkBackground"), {
+  ssr: false,
+});
 
 const PROJECTS_DATA = [
   {
@@ -149,7 +154,8 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent md:bg-black/10 transition-all duration-1000 z-10 pointer-events-none"></div>
          </div>
 
-         <div className="w-full flex-1 md:h-full md:w-[55%] lg:w-[60%] bg-[#1a1a1a] flex flex-col justify-start pt-12 pb-20 px-8 md:pt-40 md:px-20 lg:px-32 relative isolate z-10">
+         <div className="w-full flex-1 md:h-full md:w-[55%] lg:w-[60%] bg-[#1a1a1a] flex flex-col justify-start pt-12 pb-20 px-8 md:pt-40 md:px-20 lg:px-32 relative isolate z-10 overflow-hidden">
+             <NeuralNetworkBackground />
              <div className="max-w-2xl w-fit relative z-10">
                   <motion.h1 
                      initial={{ y: 30, opacity: 0 }}
