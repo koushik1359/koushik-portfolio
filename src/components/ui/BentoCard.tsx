@@ -45,13 +45,17 @@ export const BentoCard = ({
       glarePosition="all"
       scale={1.02}
       transitionSpeed={2000}
-      className={`h-full w-full min-h-[400px] md:min-h-[300px] glass-panel rounded-3xl overflow-hidden flex flex-col p-6 md:p-7 ${className}`}
+      className={`h-full w-full min-h-[400px] md:min-h-[300px] glass-panel rounded-3xl flex flex-col p-6 md:p-7 ${className}`}
     >
       {/* Background Ambient Gradient */}
       <div className={`absolute inset-0 bg-gradient-to-tr ${gradientClass} to-transparent z-0 opacity-40 group-hover:opacity-100 transition-opacity duration-700`} />
       
       {/* Content */}
-      <div className="relative z-10 flex-1 flex flex-col h-full text-left transition-transform duration-500 group-hover:-translate-y-10">
+      <motion.div 
+        className="relative z-10 flex-1 flex flex-col h-full text-left"
+        whileHover={{ y: -30 }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
+      >
         <div className="flex justify-between items-start mb-4">
           <div className="p-3 bg-white/5 rounded-xl text-white/80">
             {icon}
@@ -80,24 +84,35 @@ export const BentoCard = ({
             </span>
           ))}
         </div>
-      </div>
+      </motion.div>
 
-      {/* Hover Action Link - Absolute positioned for zero-clipping */}
-      <div className="absolute bottom-7 left-7 right-7 flex items-center justify-between text-white transition-all duration-500 text-sm font-medium opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0">
-        <div className="flex items-center text-white/50 group-hover:text-white/80 transition-colors">
+      {/* Hover Action Link - Managed via absolute positioning and motion */}
+      <div className="absolute bottom-7 left-7 right-7 flex items-center justify-between text-white text-sm font-medium z-20 pointer-events-none group-hover:pointer-events-auto">
+        <motion.div 
+          className="flex items-center text-white/50"
+          initial={{ opacity: 0, y: 10 }}
+          whileHover={{ opacity: 1, color: "#fff" }}
+          animate={{ 
+            opacity: typeof window !== 'undefined' && window.matchMedia('(hover: hover)').matches ? 0 : 1,
+            y: 0 
+          }}
+          className="group-hover:opacity-100 transition-opacity duration-300"
+        >
            View Details <ChevronRight className="w-4 h-4 ml-1" />
-        </div>
+        </motion.div>
         {href && (
-          <a 
+          <motion.a 
             href={href} 
             target="_blank" 
             rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 10 }}
+            whileHover={{ scale: 1.05 }}
+            className="flex items-center gap-2 bg-white/10 text-white px-5 py-2.5 rounded-full border border-white/10 transition-all text-xs font-bold tracking-widest uppercase group-hover:opacity-100 opacity-0 translate-y-2 group-hover:translate-y-0 duration-300 shadow-[0_4px_12px_rgba(0,0,0,0.5)]"
             onClick={(e) => e.stopPropagation()}
-            className="flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-5 py-2.5 rounded-full border border-white/10 transition-all text-xs font-bold tracking-widest uppercase group/btn shadow-[0_4px_12px_rgba(0,0,0,0.5)]"
           >
             Visit Site
-            <ExternalLink className="w-3.5 h-3.5 text-white/50 group-hover/btn:text-white transition-colors" />
-          </a>
+            <ExternalLink className="w-3.5 h-3.5 text-white/50" />
+          </motion.a>
         )}
       </div>
     </Tilt>
