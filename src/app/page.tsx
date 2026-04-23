@@ -97,7 +97,8 @@ export default function Home() {
                <Magnetic><a href="#home" className="hover:text-white transition-all transform hover:scale-110 interactive-target">Home</a></Magnetic>
                <Magnetic><a href="#projects" className="hover:text-white transition-all transform hover:scale-110 interactive-target">Projects</a></Magnetic>
                <Magnetic><a href="#skills" className="hover:text-white transition-all transform hover:scale-110 interactive-target">Skills</a></Magnetic>
-               <Magnetic><a href="#about" className="hover:text-white transition-all transform hover:scale-110 interactive-target">About Me</a></Magnetic>
+               <Magnetic><a href="#about" className="hover:text-white transition-all transform hover:scale-110 interactive-target">Experience</a></Magnetic>
+               <Magnetic><a href="#education" className="hover:text-white transition-all transform hover:scale-110 interactive-target">Education</a></Magnetic>
                <Magnetic><a href="#contact" className="hover:text-white transition-all transform hover:scale-110 interactive-target">Contact</a></Magnetic>
             </div>
             
@@ -124,10 +125,10 @@ export default function Home() {
                   </button>
                 </div>
                 <div className="flex flex-col gap-6 text-5xl md:text-7xl font-bold tracking-tighter">
-                  {["Home", "Projects", "Skills", "About", "Contact"].map((item, idx) => (
+                  {["Home", "Projects", "Skills", "Experience", "Education", "Contact"].map((item, idx) => (
                     <motion.a 
                       key={item} 
-                      href={`#${item.toLowerCase()}`} 
+                      href={`#${item === 'Experience' ? 'about' : item.toLowerCase()}`} 
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.1 * idx }}
@@ -356,35 +357,49 @@ export default function Home() {
 
       <section id="about" className="py-24 px-4 md:px-8 lg:px-12 max-w-5xl mx-auto">
          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} className="mb-16 md:text-center">
-            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter text-white mb-6">Who am <span className="text-indigo-400">I?</span></h2>
+            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter text-white mb-6">Professional <span className="text-indigo-400">Experience</span></h2>
             <p className="text-gray-400 leading-relaxed text-sm md:text-base md:mx-auto max-w-2xl font-light">
-               Master's candidate at Georgia State University (GPA: 4.13/4.30) with hands-on experience in building scalable RAG pipelines, natural language data interfaces, and clinical-grade deep learning solutions.
+               AI/ML Engineer with extensive experience in building scalable RAG architectures, NL2SQL interfaces, and cloud-native GenAI products.
             </p>
          </motion.div>
          <div className="relative border-l border-white/10 ml-4 md:ml-[10%] flex flex-col gap-12 pb-12 mt-16">
              <div className="relative pl-8 md:pl-12">
                 <div className="absolute left-[-6px] top-2 w-3 h-3 rounded-full bg-indigo-500 shadow-[0_0_15px_rgba(99,102,241,0.8)]" />
-                <span className="text-xs font-bold tracking-[0.2em] text-indigo-400 uppercase mb-3 block">Nov 2025 — Present</span>
-                <h3 className="text-2xl font-bold text-white mb-3 tracking-tight">AI Intern @ Beedatatech</h3>
-                <ul className="text-gray-500 text-sm space-y-2 mt-4 max-w-xl font-light">
-                   <li className="flex items-start gap-2">• Building multi-tenant GenAI platforms with Chat-to-SQL logic and PostgreSQL isolation.</li>
-                   <li className="flex items-start gap-2">• Engineering scalable RAG ecosystems with FastAPI, Pinecone, and HuggingFace ranking.</li>
-                   <li className="flex items-start gap-2">• Optimizing AI model performance for high-accuracy medical diagnostic pipelines.</li>
+                <span className="text-xs font-bold tracking-[0.2em] text-indigo-400 uppercase mb-3 block">01/2024 — 02/2026</span>
+                <h3 className="text-2xl font-bold text-white mb-3 tracking-tight">AI/ML Engineer @ General Motors</h3>
+                <ul className="text-gray-500 text-sm space-y-2 mt-4 max-w-2xl font-light">
+                   <li className="flex items-start gap-2">• Built AI-driven analytics workflows integrating structured data processing, LLMs, and RAG architectures for comprehensive business analysis.</li>
+                   <li className="flex items-start gap-2">• Built Natural Language-to-SQL (NL2SQL) conversational interfaces, empowering stakeholders to perform real-time operational analytics and enterprise queries via LLMs.</li>
+                   <li className="flex items-start gap-2">• Designed scalable data ingestion, transformation, and inference workflows on cloud infrastructure, collaborating closely with cross-functional teams to drive end-to-end GenAI product delivery.</li>
+                   <li className="flex items-start gap-2">• Architected RAG and Agentic AI workflows using LangChain, LangGraph, Vertex AI, and Vector Databases (Pinecone, FAISS, Chroma) for custom semantic scoring and hydrologic verification.</li>
+                   <li className="flex items-start gap-2">• Developed Multi-Agent evaluation platforms leveraging CrewAI and MCP Server for autonomous document analysis, scaling extraction accuracy and delivering structured insights.</li>
                 </ul>
              </div>
              <div className="relative pl-8 md:pl-12">
                 <div className="absolute left-[-6px] top-2 w-3 h-3 rounded-full bg-white/20" />
-                <span className="text-xs font-bold tracking-[0.2em] text-white/50 mb-3 block">Graduated on May 2025</span>
-                <h3 className="text-xl font-bold text-white mb-3 tracking-tight">MS in Data Science & Analytics</h3>
-                <p className="text-gray-500 text-sm font-light">Georgia State University | GPA: 4.13/4.30</p>
-             </div>
-             <div className="relative pl-8 md:pl-12">
-                <div className="absolute left-[-6px] top-2 w-3 h-3 rounded-full bg-white/20" />
-                <span className="text-xs font-bold tracking-[0.2em] text-white/50 uppercase mb-3 block">Aug 2023 — May 2025</span>
-                <h3 className="text-xl font-bold text-white mb-3 tracking-tight">Graduate Teaching Assistant</h3>
-                <p className="text-gray-500 text-sm font-light">Supporting students in Big Data Programming and Advanced ML labs.</p>
+                <span className="text-xs font-bold tracking-[0.2em] text-white/50 mb-3 block">01/2022 — 06/2023</span>
+                <h3 className="text-2xl font-bold text-white mb-3 tracking-tight">Data Analyst / Data Engineer @ RK Info Systems</h3>
+                <ul className="text-gray-500 text-sm space-y-2 mt-4 max-w-2xl font-light">
+                   <li className="flex items-start gap-2">• Architected AWS Enterprise Data Lake infrastructure combining S3, Redshift, and RDS for high-volume data storage and distributed analytical workloads.</li>
+                   <li className="flex items-start gap-2">• Built automated ETL/ELT data pipelines using AWS Glue, PySpark, and AWS Athena, effectively transforming and integrating massive Parquet and CSV datasets.</li>
+                   <li className="flex items-start gap-2">• Executed on-premises application migrations to distributed cloud architectures across AWS EC2 and S3, maintaining and optimizing Hadoop clusters within AWS EMR.</li>
+                   <li className="flex items-start gap-2">• Managed real-time streaming architectures utilizing AWS Kinesis (Streams, Firehose, Analytics), routing streaming data outputs directly into DynamoDB and Redshift.</li>
+                   <li className="flex items-start gap-2">• Orchestrated robust and automated data workflows via Apache Airflow DAGs, maintaining production workloads across resilient multi-cluster Kubernetes environments.</li>
+                </ul>
              </div>
           </div>
+      </section>
+
+      <section id="education" className="py-24 px-4 md:px-8 lg:px-12 max-w-5xl mx-auto">
+         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} className="mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-white mb-4">Education</h2>
+            <div className="h-[1px] w-24 bg-indigo-500/50"></div>
+         </motion.div>
+         <div className="glass-panel p-8 rounded-3xl border border-white/5 max-w-2xl">
+            <span className="text-xs font-bold tracking-[0.2em] text-indigo-400 uppercase mb-3 block">Graduated May 2025</span>
+            <h3 className="text-2xl font-bold text-white mb-2 tracking-tight">MS in Data Science & Analytics</h3>
+            <p className="text-gray-400 text-lg font-light">Georgia State University | <span className="text-indigo-400/80 font-medium">GPA: 4.13/4.30</span></p>
+         </div>
       </section>
 
       <section id="contact" className="py-32 px-4 md:px-8 lg:px-12 max-w-7xl mx-auto border-t border-white/5">
